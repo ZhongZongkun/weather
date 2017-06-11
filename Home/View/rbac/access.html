@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{:U('rbac/access_handle')}" method="post">
+    <input type="hidden" name="id" value="{$id}">
+<foreach name="info" key="k" item="v">
+    <div style="background-color: #ececec;padding: 5px">
+        <span style="display: block;"><h1 style="display: inline-block">{$v['title']}</h1><input type="hidden" name="level[]" value="{$v['level']}"><input type="checkbox" name="check[]" value="{$v['id']}" <if condition="$v['access'] eq 1">checked</if>></span>
+        <foreach name="v['child']" key="kk" item="vv">
+            <div style="background-color: #dcdcdc;">
+                <span level="2" style="display:block;margin: 0 0 20px 0"><h4 style="display: inline-block"><input type="hidden" name="level[]" value="{$vv['level']}">{$vv['title']}</h4><input  type="checkbox" name="check[]" value="{$vv['id']}" <if condition="$vv['access'] eq 1">checked</if>></span>
+                <foreach name="vv[child]" key="kkk" item="vvv">
+                    <span level="3" style="display:inline-block;background-color: #c6c6c6;margin:5px 10px "><input type="hidden" name="level[]" value="{$vvv['level']}">{$vvv['title']}<input  type="checkbox" name="check[]" value="{$vvv['id']}" <if condition="$vvv['access'] eq 1">checked</if>></span>
+                </foreach>
+            </div>
+        </foreach>
+    </div>
+</foreach>
+    <input type="submit" value="提交">
+</form>
+<a href="{:U('rbac/index')}">返回</a>
+</body>
+</html>

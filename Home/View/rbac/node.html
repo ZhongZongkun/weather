@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<foreach name="info" key="k" item="v">
+    <div style="background-color: #ececec;padding: 5px">
+        <span style="display: block;"><h1>{$v['title']}</h1></span>
+        <foreach name="v['child']" key="kk" item="vv">
+            <div style="background-color: #dcdcdc;">
+                <span style="display:block;margin: 0 0 20px 0"><h4>{$vv['title']}</h4></span>
+                <foreach name="vv[child]" key="kkk" item="vvv">
+                <div style="display:inline-block;background-color: #c6c6c6;margin:5px 10px ">{$vvv['title']}</div>
+                </foreach>
+            </div>
+        </foreach>
+
+    </div>
+</foreach>
+<a href="{:U('rbac/index')}">返回</a>
+</body>
+</html>

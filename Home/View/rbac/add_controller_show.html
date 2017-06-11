@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{:U('Rbac/add_controller_handle')}">
+    <table>
+        <tr>
+            <th>控制器名称</th>
+            <th>控制器备注</th>
+            <th>开启状态</th>
+        </tr>
+        <tr>
+            <td><input name="name"></td>
+            <td><input name="title"></td>
+            <td><input name="status" placeholder="1开启，0关闭"></td>
+            <input type="hidden" name="pid" value="{$id}">
+            <input type="hidden" name="level" value="2">
+        </tr>
+        <tr >
+            <td colspan="6"><input type="submit" value="提交"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{:U('Rbac/add_character_handle')}">
+    <table>
+        <tr>
+            <th>角色名</th>
+            <th>角色备注</th>
+            <th>开启状态</th>
+        </tr>
+            <tr>
+                <td><input name='name' placeholder="角色名" ></td>
+                <td><input name='remark' placeholder="备注" ></td>
+                <td><input name='status' placeholder="是否开启(0关闭，1开启)" ></td>
+
+            </tr>
+        <tr>
+            <td colspan="3"><input type="submit" value="提交"></td>
+        </tr>
+        <tr>        <td colspan="3"><a href="{:U('rbac/index')}">返回</a></td></tr>
+    </table>
+</form>
+</body>
+</html>

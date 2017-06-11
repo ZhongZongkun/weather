@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+节点操作
+<table>
+    <tr>
+        <th>应用名称</th>
+        <th>应用备注</th>
+        <th>开启状态</th>
+        <th>操作</th>
+    </tr>
+    <foreach name="info" item="v">
+        <tr>
+            <td>{$v['name']}</td>
+            <td>{$v['title']}</td>
+            <td>{$v['status']}</td>
+            <td><a href="{:U('Rbac/add_controller',array('id'=>$v['id']))}">添加控制器</a></td>
+        </tr>
+    </foreach>
+    <tr>
+        <td colspan="4"><a href="{:U('Rbac/add_yingyong')}" >添加应用</a></td>
+    </tr>
+</table>
+<a href="{:U('rbac/index')}">返回</a>
+</body>
+</html>

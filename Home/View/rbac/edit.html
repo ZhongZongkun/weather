@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{:U('Rbac/edit_handle')}">
+<table>
+    <tr>
+        <th>角色名</th>
+        <th>角色备注</th>
+        <th>开启状态</th>
+    </tr>
+    <foreach name="info" item="v">
+        <tr>
+            <td><input name='name' value="{$v['name']}"></td>
+            <td><input name='remark' value="{$v['remark']}"></td>
+            <td><input name='status' value="{$v['status']}"></td>
+            <input type="hidden" name="id" value="{$v['id']}">
+        </tr>
+    </foreach>
+    <tr>
+    <td colspan="3"><input type="submit" value="提交"></td>
+    </tr>
+    <tr>        <td colspan="3"><a href="{:U('rbac/index')}">返回</a></td></tr>
+</table>
+</form>
+</body>
+</html>

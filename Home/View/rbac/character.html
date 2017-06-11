@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>角色名</th>
+        <th>角色备注</th>
+        <th>开启状态</th>
+        <th colspan="2">操作</th>
+    </tr>
+    <foreach name="info" item="v">
+    <tr>
+        <td>{$v['name']}</td>
+        <td>{$v['remark']}</td>
+        <td>{$v['status']}</td>
+<td><a href="{:U('rbac/edit',array('id'=>$v['id']))}">修改</a></td>
+        <td><a href="{:U('rbac/access',array('id'=>$v['id']))}">配置权限</a></td>
+    </tr>
+    </foreach>
+</table>
+<a href="{:U('rbac/index')}">返回</a>
+</body>
+</html>
